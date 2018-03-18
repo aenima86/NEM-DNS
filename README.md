@@ -62,7 +62,7 @@ $.each(data['data'], function( index, value ) {
  });
 ```
  
-Code from this project is available via GitHub under MIT license. The project and website demo can be downloaded from [GitHub]( https://github.com/aenima86/NEM-DNS) or try the demo pulling code from GitHub [https://rawgit.com/aenima86/NEM-DNS/master/index.html]( https://rawgit.com/aenima86/NEM-DNS/master/index.html) (remember to load the full site including JavaScript, some bowsers might block content).
+Code from this project is available via GitHub under MIT license. The project and website demo can be downloaded from [GitHub]( https://github.com/aenima86/NEM-DNS) or try the demo pulling code from GitHub [http://nem-dns.bitballoon.com/]( http://nem-dns.bitballoon.com/).
 You can also try the chrome extension by manually installing it. You will have to navigate to the chrome extensions page  [chrome://extensions](chrome://extensions) (copy past this into your chrome browser), activate developer mode, download the NEM DNS chrome extension from the GitHub page and then load unpacked extension from google chrome. Now a NEM icon should appear in the right corner of the browser and you are ready to search NEM domains. You can try navigating to "blockchain.nem".
 
 ##### Credits
