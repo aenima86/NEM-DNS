@@ -5,7 +5,7 @@ if(urls !== null){
 
 
  	var namespace = urls.replace(/.nem/g, '');
-	var namRequest = "http://23.228.67.85:7890/namespace?namespace=" + namespace;
+	var namRequest = "http://104.128.226.60:7890/namespace?namespace=" + namespace;
 
 
 	

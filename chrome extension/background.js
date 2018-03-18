@@ -16,7 +16,7 @@ types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "x
 };
 var opt_extraInfoSpec = [];
 
-var host = "https://rawgit.com/aenima86/NEM-DNS/master/index.html?url=";
+var host = "http://nem-dns.bitballoon.com/?url=";
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     var fname = details.url;
