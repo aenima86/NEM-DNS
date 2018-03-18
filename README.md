@@ -69,6 +69,28 @@ You can also try the chrome extension by manually installing it. You will have t
 
 ![alt text](https://i.imgur.com/GPJneqU.png "Chrome extension")
 
+The extension is working in the background adding a webRequest listener. When an request is executed in the address bar by the user the extension will analyze the request to check if it’s an .nem domain request. If this is true the request will be redirected to the demo website which will execute the DNS search on the blockchain via api requests to NIS. The reason that the extension is not directly searching the blockchain is that currently the NIS api only allow http requests and only https request is allowed in google chrome extensions.
+
+```js
+
+var host = "http://nem-dns.bitballoon.com/?url=";
+chrome.webRequest.onBeforeRequest.addListener(
+  function(details) {
+  
+    	var fname = details.url;
+    	var ext = fname.slice((fname.lastIndexOf(".") - 1 >>> 0) + 2);
+    	if(ext.toLowerCase().replace("/", "")=="nem") {
+		var nemurl = details.url.replace("http://", "").replace("www.", "").replace("/", "");
+		chrome.extension.getBackgroundPage().console.log( nemurl );
+		chrome.tabs.update({url: host+nemurl+'&b=find.stop'});
+	});
+ 
+     
+  
+   }  
+}, filter, opt_extraInfoSpec);
+```
+
 
 ##### Credits
 Icons made by DinosoftLabs & Freepik from www.flaticon.com, Creative Commons BY 3.0
