@@ -16,7 +16,7 @@ types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "x
 };
 var opt_extraInfoSpec = [];
 
-var host = "http://vocalline.dk/?url=";
+var host = "https://rawgit.com/aenima86/NEM-DNS/master/index.html?url=";
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     var fname = details.url;
