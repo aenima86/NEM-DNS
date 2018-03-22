@@ -43,6 +43,11 @@ function getPointerAccount(namespace){
 	return address;
 
 }
+
+pointerAdd = getPointerAccount('helloworld');
+
+//getPointerAccount for the namespace 'helloworld' will return TABTUMMMIETL6MKM6SJ2ZIEWAH36SMTRXNHHW42C
+
 ``` 
 
 ![alt text](https://i.imgur.com/F7TZubA.jpg "NEM DNS website")
