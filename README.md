@@ -21,7 +21,7 @@ The owner of a NEM namespace can use the NEM DNS in a few easy sets. The DNS is 
 
 ##### Example of JSON object: 
 ```json
- {"ip":"your ip", "email": "your email" ...
+ {"ip1":"your ip", "email": "your email" ...
  }
 ``` 
 
