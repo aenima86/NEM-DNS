@@ -11,6 +11,9 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 })
 
 
+//Wait webRequest
+
+
 var filter = {urls: ["<all_urls>"],
 types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "object", "xmlhttprequest", "other"]
 };
