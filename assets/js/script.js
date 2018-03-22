@@ -6,8 +6,6 @@ if(urls !== null){
 
  	var namespace = urls.replace(/.nem/g, '');
 	var namRequest = "http://104.128.226.60:7890/namespace?namespace=" + namespace;
-
-
 	
 	getNamespaceOwner(namRequest,namespace,1);
 
@@ -34,7 +32,6 @@ $("#goBut").click(function(){
 $("#getBut").click(function(){
 	
 	var namespace = $('#inputName').val().replace(/.nem/g, '');
-	
 
 	var namRequest = "http://104.128.226.60:7890/namespace?namespace=" + namespace;
 
