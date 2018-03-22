@@ -22,6 +22,9 @@ The owner of a NEM namespace can use the NEM DNS in a few easy steps. The DNS is
 ##### Example of JSON object: 
 ```js
  {"dns":"yes","ip1":"your ip", "email": "your email"}
+ 
+ // the "dns" = "yes" key will signal that the massage contains DNS info
+ // the "ip1" key is the primary IP related to your .nem domain
 ``` 
 
 The pointer address (PA) is found sha256 hashing the namespace name and deriving a NEM public address. You can find a tool on the demo website for calculating the pointer address related to your namespace.
