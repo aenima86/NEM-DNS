@@ -56,7 +56,7 @@ http://104.128.226.60:7890/namespace?namespace=helloworld
  
 ##### Example of returned JSON object: 
 ```json
-{"owner":"TBP6ZYBVNRA7S6EOQZ45IXNN3UJTABR3ONKJJSQK","fqn":"blockchain","height":1206887}
+{"owner":"TCFSDG3XDH2SXWPVJ2Q4LV2SLS57TFJUATT2UJSZ","fqn":"helloworld","height":1387671}
 ``` 
 
 When ownership of the domain is established the algorithm will do a second request related to the pointer address. This request will look for incoming transactions from the owner account. Looping thought the transactions searching for the newest DNS transaction with DNS information.
