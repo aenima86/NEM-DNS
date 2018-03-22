@@ -17,12 +17,32 @@ The classic DNS system despite its high performance, has many weaknesses. The cl
 NEM is a peer-to-peer network that has no domain registrars, domain zone owners, or intermediate caches. The NEM blockchain has proven to be one of the most secure blockchains and information cannot be tampered with. Each NIS has a validated copy of the entire blockchain , the complete database of domain names, messages and transactions. Data reliability is based on the fact that the database is the same for all NIS ensured by the blockchain technology itself and a public consensus mechanism. No one, except the owner of each private key, can change or cancel any record in the chain after it has been submitted and validated. 
 
 ### Controlling a namespace
-The owner of a NEM namespace can use the NEM DNS in a few easy sets. The DNS is built around the namespace platform in the NEM ecosystem and associated mosaics. The owner needs to create a mosaic with the name "dns". The mosaic can now be send to the same address owning the namespace including a non-encrypted message in json format with information related to the namespace. The message can include relevant information such as IP address, ownership info, physical address, contact info and much more. To update the record the owner can simply resend the "dns" mosaic with the new information.   
+The owner of a NEM namespace can use the NEM DNS in a few easy steps. The DNS is built around the namespace platform in the NEM ecosystem and an associated pointer address. The namespace owner needs to send a transaction to the namespace pointer address including a non-encrypted message in json format with information related to the namespace. The message can include relevant information such as IP address, ownership info, physical address, contact info and much more. To update the record the owner can simply send a new transaction with the new information.   
 
 ##### Example of JSON object: 
 ```json
- {"ip1":"your ip", "email": "your email" ...
+ {"dns":"yes","ip1":"your ip", "email": "your email" ...
  }
+``` 
+
+The pointer address is found sha256 hashing the namespace name and deriving a NEM public address. You can find a tool on the demo website for calculating the pointer address related to your namespace.
+
+```js
+function getPointerAccount(namespace){
+
+	passphrase = sha256(namespace);
+	
+	var privateKey =  nem.crypto.helpers.derivePassSha(passphrase, 6000).priv;
+	
+	var keyPair = nem.crypto.keyPair.create(privateKey);
+	
+	var publicKey = keyPair.publicKey.toString();
+	
+	var address = nem.model.address.toAddress(publicKey, nem.model.network.data.testnet.id);
+	
+	return address;
+
+}
 ``` 
 
 ![alt text](https://i.imgur.com/F7TZubA.jpg "NEM DNS website")
