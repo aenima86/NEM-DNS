@@ -29,7 +29,7 @@
 
 							<p>Decentralized, censorship free and updatable DNS 
 							<br />
-							try typing google.nem or blockchain.nem</p>
+							try typing <b>helloworld.nem</b> or <b>getlucky.nem</b></p>
 							<ul class="actions">
 								<form >
 									<div class="row 100%">
@@ -74,15 +74,15 @@
 								<div class="image-wrapper">
 									
 								</div>
-								<h2><i class="fa fa-cube" aria-hidden="true"></i> Register DNS mosaic</h2>
-								<p>Register a transferable "dns" named mosaic under your namespace.</p>
+								<h2><i class="fa fa-cube" aria-hidden="true"></i> Find  pointer address</h2>
+								<p>You can use this <a id="goPA">tool</a> to find your namespace pointer address (PA).</p>
 							</section>
 							<section class="4u 12u(narrower) feature">
 								<div class="image-wrapper">
 								
 								</div>
 								<h2><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Update info</h2>
-								<p>Send the token to update DNS info. Include the info in a message using a json format.</p>
+								<p>Send a massage to the PA to update DNS info. Include the info in a message using a json format.</p>
 							</section>
 						</div>
 
@@ -125,7 +125,7 @@
 						</header>
 						<p>Beside storing ip's to your website, you can store other relevant information such as addresses, organization info, billing info, contact info etc.
 							send dns token with non-encrypted message in json format:
-						{'ip': 'your ip', 'email': 'your email' ...}</p>
+						{"dns": "yes", ip1": "your ip", "email": "your email" ...}</p>
 						<div class="row">
 							
 							<section class="6u 12u(narrower)">
@@ -169,7 +169,8 @@
 		</div>
 
 		<!-- Scripts -->
-
+		<script src="assets/js/sha256.js"></script>
+		<script src="assets/js/nem-sdk.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
