@@ -20,7 +20,7 @@ NEM is a peer-to-peer network that has no domain registrars, domain zone owners,
 The owner of a NEM namespace can use the NEM DNS in a few easy steps. The DNS is built around the namespace platform in the NEM ecosystem and an associated pointer address (PA). The namespace owner needs to send a transaction to the namespace pointer address including a non-encrypted message in json format with information related to the namespace. The message can include relevant information such as IP address, ownership info, physical address, contact info and much more. To update the record the owner can simply send a new transaction with the new information.   
 
 ##### Example of JSON object: 
-```json
+```js
  {"dns":"yes","ip1":"your ip", "email": "your email"}
 ``` 
 
