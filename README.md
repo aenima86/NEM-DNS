@@ -51,7 +51,7 @@ function getPointerAccount(namespace){
 Searching the DNS can be done in several ways, this project have made available two different options. (1) using a website, (2) a chrome extension for easy search using the browser address bar. Both options uses JavaScript and the utilities of the NIS api. When requesting a search for the .nem domain name the algorithm will do two NIS requests, the first one will establish ownership of the domain.
 
 ##### Example: 
-http://104.128.226.60:7890/namespace?namespace=blockchain
+http://104.128.226.60:7890/namespace?namespace=helloworld
 
  
 ##### Example of returned JSON object: 
@@ -59,28 +59,33 @@ http://104.128.226.60:7890/namespace?namespace=blockchain
 {"owner":"TBP6ZYBVNRA7S6EOQZ45IXNN3UJTABR3ONKJJSQK","fqn":"blockchain","height":1206887}
 ``` 
 
-When ownership of the domain is established the algorithm will do a second request related to the owner account. This request will look for outgoing transactions from the account. Looping thought the transactions searching for the newest "dns" mosaic transaction with DNS information.
+When ownership of the domain is established the algorithm will do a second request related to the pointer address. This request will look for incoming transactions from the owner account. Looping thought the transactions searching for the newest DNS transaction with DNS information.
 
 ##### Example: 
-http://104.128.226.60:7890/account/transfers/outgoing?address=TBP6ZYBVNRA7S6EOQZ45IXNN3UJTABR3ONKJJSQK
+http://104.128.226.60:7890/account/transfers/incoming?address=TABTUMMMIETL6MKM6SJ2ZIEWAH36SMTRXNHHW42C
 
 ```js
+var stop =0;
 $.each(data['data'], function( index, value ) {
+					
+	if ( nem.model.address.toAddress(value['transaction']['signer']...
+	, nem.model.network.data.testnet.id)== ownerAdd){
 
-	if (value['transaction']['mosaics']!= undefined){
+	  var payload = convertFromHex(value['transaction']['message']['payload']);
+	  var objPayload = jQuery.parseJSON( payload );
+	  if (objPayload['dns']=='yes' && stop==0){
 
-	    $.each(value['transaction']['mosaics'], function( index2, value2 ) {
-	    
-			if (value2['mosaicId']['namespaceId'] == namespace && ...
-			value2['mosaicId']['name'] == 'dns'){
+	    stop =1;
 
-				var payload = convertFromHex(value['transaction']['message']['payload']);
-				var objPayload = jQuery.parseJSON( payload );
-				if(typeRequest==1){window.location ='http://'+objPayload['ip1']};
-			}
-		});
+	    if(typeRe==1){window.location ='http://'+objPayload['ip1']};
+	    if(typeRe==2){alert(payload);};
+
+	  }
+
 	}
- });
+									
+
+});
 ```
  
 Code from this project is available via GitHub under MIT license. The project and website demo can be downloaded from [GitHub]( https://github.com/aenima86/NEM-DNS) or you can try the demo [http://nem-dns.bitballoon.com/]( http://nem-dns.bitballoon.com/) running on the testnet.
