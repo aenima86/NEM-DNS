@@ -74,6 +74,7 @@ function getNamespaceOwner(namRequest,namespace,typeRe,pointerAcc) {
 		})
 		.fail(function() {
 		  console.log( "error" );
+		  alert('Could not find ' + namespace+'.nem');
 		})
 		.always(function() {
 		  console.log( "complete" );
@@ -123,11 +124,17 @@ function getDNSdata(ownerAdd,namespace,typeRe,pointerAcc) {
 					
 
 			  });
+
+			  if (stop==0){
+
+				alert('Could not find ' + namespace+'.nem');
+			  }
 	
 	
 			})
 			.fail(function() {
 			  console.log( "error" );
+			  alert('Could not find ' + namespace+'.nem');
 			})
 			.always(function() {
 			  console.log( "complete" );
