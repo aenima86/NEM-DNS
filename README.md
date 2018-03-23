@@ -1,5 +1,5 @@
 # **NEM DNS**
-![alt text](https://i.imgur.com/VbUOU54.png "NEM DNS")
+![alt text](https://i.imgur.com/1Cwi9Vl.png "NEM DNS")
 
 This blog post will demonstrate how the NEM blockchain can be used for a smart, decentralized and reliable DNS service for internet services, for example the translation of domain names to IP addresses. The project include
 * MIT licensed GitHub code
