@@ -170,7 +170,7 @@ function getPointerAccount(namespace){
 
 	passphrase = sha256(namespace);
 	
-	var privateKey =  nem.crypto.helpers.derivePassSha(passphrase, 6000).priv;
+	var privateKey =  nem.crypto.helpers.derivePassSha(passphrase, 1).priv;
 	
 	var keyPair = nem.crypto.keyPair.create(privateKey);
 	
