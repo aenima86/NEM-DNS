@@ -49,7 +49,7 @@ function getPointerAccount(namespace){
 
 pointerAdd = getPointerAccount('helloworld');
 
-//getPointerAccount for the namespace 'helloworld' will return TABTUMMMIETL6MKM6SJ2ZIEWAH36SMTRXNHHW42C
+//getPointerAccount for the namespace 'helloworld' will return TCGD57YKW5TFEY5TWTN7XBJXEZBGGURYXJ54FLDE
 
 ``` 
 
@@ -70,7 +70,7 @@ http://104.128.226.60:7890/namespace?namespace=helloworld
 When ownership of the domain is established the algorithm will do a second request related to the pointer address. This request will look for incoming transactions from the owner account. Looping thought the transactions searching for the newest DNS transaction with DNS information.
 
 ##### Example: 
-http://104.128.226.60:7890/account/transfers/incoming?address=TABTUMMMIETL6MKM6SJ2ZIEWAH36SMTRXNHHW42C
+http://104.128.226.60:7890/account/transfers/incoming?address=TCGD57YKW5TFEY5TWTN7XBJXEZBGGURYXJ54FLDE
 
 ```js
 var stop =0;
