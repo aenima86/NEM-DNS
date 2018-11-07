@@ -98,32 +98,12 @@ $.each(data['data'], function( index, value ) {
  
 Code from this project is available via GitHub under MIT license. The project and website demo can be downloaded from [GitHub]( https://github.com/aenima86/NEM-DNS) or you can try the demo [http://nem-dns.bitballoon.com/]( http://nem-dns.bitballoon.com/) running on the testnet.
 
-### Chrome browser extension (ONLY for this testnet version)
-You can also try the chrome extension by manually installing it. You will have to navigate to the chrome extensions page  [chrome://extensions](chrome://extensions) (copy past this into your chrome browser), activate developer mode, download the NEM DNS chrome extension from the GitHub page and then load unpacked extension from google chrome. Now a NEM icon should appear in the right corner of the browser and you are ready to search NEM domains. You can try navigating to "www.helloworld.nem".
+### Chrome browser extension 
+You can also try the chrome extension by manually installing it. You will have to navigate to the chrome extensions page  [chrome://extensions](chrome://extensions) (copy past this into your chrome browser), activate developer mode, download the NEM DNS chrome extension from the GitHub page and then load unpacked extension from google chrome. Now a NEM icon should appear in the right corner of the browser and you are ready to search NEM domains. You can try navigating to "www.hello.nem".
 
 ![alt text](https://i.imgur.com/GPJneqU.png "Chrome extension")
 
-The extension is working in the background adding a webRequest listener. When an request is executed in the address bar by the user the extension will analyze the request to check if it’s an .nem domain request. If this is true the request will be redirected to the demo website which will execute the DNS search on the blockchain via api requests to NIS. The reason that the extension is not directly searching the blockchain is that currently the NIS api only allow http requests and only https request is allowed in google chrome extensions.
-
-```js
-
-var host = "http://nem-dns.bitballoon.com/?url=";
-chrome.webRequest.onBeforeRequest.addListener(
-  function(details) {
-  
-    	var fname = details.url;
-    	var ext = fname.slice((fname.lastIndexOf(".") - 1 >>> 0) + 2);
-    	if(ext.toLowerCase().replace("/", "")=="nem") {
-		var nemurl = details.url.replace("http://", "").replace("www.", "").replace("/", "");
-		chrome.extension.getBackgroundPage().console.log( nemurl );
-		chrome.tabs.update({url: host+nemurl+'&b=find.stop'});
-	});
- 
-     
-  
-   }  
-}, filter, opt_extraInfoSpec);
-```
+The extension is working in the background adding a webRequest listener. When an request is executed in the address bar by the user the extension will analyze the request to check if it’s an .nem domain request. 
 
 
 ##### Credits
